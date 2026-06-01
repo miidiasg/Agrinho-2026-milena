@@ -1,0 +1,295 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background-color: #2e7d32; /* Verde Agro */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e2723; /* Tom de terra */
+}
+
+.logo span {
+    color: #2e7d32;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #2e7d32;
+}
+
+/* Banner Principal (Hero) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d15ef3752d?q=80&w=1920') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sobre */
+.sobre {
+    text-align: center;
+    max-width: 800px;
+}
+
+.sobre h2 {
+    font-size: 32px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* Pilares */
+.pilares {
+    background-color: #edf4ed;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #3e2723;
+    margin-bottom: 40px;
+}
+
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid #2e7d32;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #3e2723;
+    margin-bottom: 15px;
+}
+
+/* Seção do Quiz */
+.quiz-section {
+    background-color: #f0f4f1;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quiz-container {
+    max-width: 700px;
+    text-align: center;
+}
+
+.quiz-container h2 {
+    color: #2e7d32;
+    font-size: 32px;
+}
+
+.quiz-subtitle {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.quiz-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.pergunta {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3e2723;
+    margin-bottom: 15px;
+}
+
+.opcao {
+    display: block;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.opcao:hover {
+    background: #edf4ed;
+}
+
+.opcao input {
+    margin-right: 10px;
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contato */
+.contato {
+    text-align: center;
+    max-width: 600px;
+}
+
+.contato h2 {
+    font-size: 32px;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.contato p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contato input, 
+.form-contato textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-contato input:focus, 
+.form-contato textarea:focus {
+    border-color: #2e7d32;
+    outline: none;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #3e2723;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Responsividade Básica (Dispositivos Móveis) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}

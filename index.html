@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Compromisso</a></li>
+                    <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente.</p>
+            <a href="#sobre" class="btn">Saiba Mais</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre container">
+        <h2>Equilíbrio que Alimenta o Mundo</h2>
+        <p>Acreditamos que a força do agronegócio não precisa caminhar separada da conservação ambiental. Produzir com responsabilidade significa adotar tecnologias que otimizam o uso de recursos naturais, protegem a biodiversidade e garantem o sustento das próximas gerações.</p>
+    </section>
+
+    <section id="pilares" class="pilares">
+        <div class="container">
+            <h2 class="section-title">Nossos Pilares</h2>
+            <div class="grid-pilares">
+                <div class="card">
+                    <h3>Tecnologia Verde</h3>
+                    <p>Uso de inteligência artificial, drones e sensores para aplicar insumos na quantidade exata, reduzindo o desperdício.</p>
+                </div>
+                <div class="card">
+                    <h3>Manejo Consciente</h3>
+                    <p>Práticas como o plantio direto e a rotação de culturas, que preservam os nutrientes do solo e evitam a erosão.</p>
+                </div>
+                <div class="card">
+                    <h3>Energia Limpa</h3>
+                    <p>Incentivo ao uso de fontes renováveis no campo, como a energia solar e a biomassa, diminuindo a pegada de carbono.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="quiz-section">
+        <div class="container quiz-container">
+            <h2>Test seu Conhecimento</h2>
+            <p class="quiz-subtitle">Descubra o quanto você sabe sobre o agro sustentável!</p>
+            
+            <form id="agro-quiz">
+                <div class="quiz-item">
+                    <p class="pergunta">1. Qual das seguintes práticas ajuda a evitar a erosão do solo?</p>
+                    <label class="opcao">
+                        <input type="radio" name="p1" value="errado"> Desmatamento das encostas.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="p1" value="correto"> Plantio direto e rotação de culturas.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="p1" value="errado"> Uso intensivo de tratores pesados na chuva.
+                    </label>
+                </div>
+
+                <div class="quiz-item">
+                    <p class="pergunta">2. Como a tecnologia auxilia no "Agro Verde"?</p>
+                    <label class="opcao">
+                        <input type="radio" name="p2" value="errado"> Substituindo completamente a água por produtos químicos.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="p2" value="errado"> Aumentando o desperdício de sementes antigas.
+                    </label>
+                    <label class="opcao">
+                        <input type="radio" name="p2" value="correto"> Usando drones e sensores para aplicar recursos de forma exata.
+                    </label>
+                </div>
+
+                <button type="button" class="btn" onclick="verificarQuiz()">Enviar Respostas</button>
+            </form>
+
+            <div id="resultado-quiz" class="resultado hidden"></div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato container">
+        <h2>Junte-se ao Futuro do Agro</h2>
+        <p>Quer saber mais sobre como implementar práticas sustentáveis na sua produção? Entre em contato conosco.</p>
+        <form class="form-contato">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Agro Sustentável. Cultivando produção, preservando o futuro.</p>
+    </footer>
+
+    <script>
+        function verificarQuiz() {
+            const form = document.getElementById('agro-quiz');
+            const resultadoDiv = document.getElementById('resultado-quiz');
+            
+            // Pega as respostas selecionadas
+            const r1 = form.elements['p1'].value;
+            const r2 = form.elements['p2'].value;
+            
+            if (!r1 || !r2) {
+                alert("Por favor, responda todas as perguntas antes de enviar!");
+                return;
+            }
+            
+            let acertos = 0;
+            if (r1 === 'correto') acertos++;
+            if (r2 === 'correto') acertos++;
+            
+            // Exibe o resultado personalizado
+            resultadoDiv.classList.remove('hidden');
+            if (acertos === 2) {
+                resultadoDiv.innerHTML = `<h3>🎉 Parabéns! Você acertou ${acertos}/2!</h3><p>Você entende muito bem sobre o equilíbrio no agronegócio sustentável.</p>`;
+                resultadoDiv.style.backgroundColor = "#e8f5e9";
+                resultadoDiv.style.color = "#2e7d32";
+            } else {
+                resultadoDiv.innerHTML = `<h3>💪 Bom esforço! Você acertou ${acertos}/2.</h3><p>Revise nossos pilares acima para aprender mais sobre as técnicas do agro sustentável!</p>`;
+                resultadoDiv.style.backgroundColor = "#fff3e0";
+                resultadoDiv.style.color = "#e65100";
+            }
+            
+            // Rola a tela suavemente até o resultado
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
